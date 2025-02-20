@@ -3,3 +3,5 @@ __debug*
 .vscode/
 coverage.out
 bin/
+
+config.yaml

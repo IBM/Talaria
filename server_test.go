@@ -4,11 +4,12 @@ import (
 	"context"
 	"fmt"
 	"net"
-	"opentalaria/config"
 	"os"
 	"sync"
 	"testing"
 	"time"
+
+	"github.com/ibm/opentalaria/config"
 )
 
 type MockClient struct {

@@ -1,10 +1,11 @@
 package api
 
 import (
-	"opentalaria/config"
-	"opentalaria/protocol"
 	"reflect"
 	"testing"
+
+	"github.com/ibm/opentalaria/config"
+	"github.com/ibm/opentalaria/protocol"
 )
 
 func getMockHeader(version int, requestApiKey, requestApiVersion int16, correlationId int32) protocol.RequestHeader {
@@ -160,7 +161,6 @@ func TestMetadataAPI_GeneratePayload(t *testing.T) {
 			fields: fields{
 				Request: Request{
 					Header: getMockHeader(1, 3, 0, 0),
-					Config: config,
 				},
 			},
 			want:    []byte{0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 49, 50, 55, 46, 48, 46, 48, 46, 49, 0, 0, 35, 132, 0, 0, 0, 1, 0, 0, 0, 10, 116, 101, 115, 116, 45, 116, 111, 112, 105, 99, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
@@ -171,6 +171,7 @@ func TestMetadataAPI_GeneratePayload(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			m := MetadataAPI{
 				Request: tt.fields.Request,
+				Config:  config,
 			}
 			got, err := m.GeneratePayload()
 			if (err != nil) != tt.wantErr {

@@ -7,13 +7,14 @@ import (
 	"fmt"
 	"io"
 	"log/slog"
-	"opentalaria/utils"
 	"reflect"
 	"runtime"
 	"strings"
 	"sync"
 	"testing"
 	"time"
+
+	"github.com/ibm/opentalaria/utils"
 )
 
 func Test_painter(t *testing.T) {

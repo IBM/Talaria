@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log/slog"
 	"net"
-	"opentalaria/config"
-	"opentalaria/protocol"
+
+	"github.com/ibm/opentalaria/protocol"
 )
 
 type API interface {
@@ -20,7 +20,6 @@ type Request struct {
 	Header  protocol.RequestHeader
 	Message []byte
 	Conn    net.Conn
-	Config  *config.Config
 }
 
 func HandleResponse(api API) error {

@@ -26,3 +26,10 @@ profile: localdev
 debug.server.port: 9090
 # Connection pool size used by socket server
 # max.connections: 5
+
+plugins:
+  postgres:
+    host: host
+    port: 5432
+    username: postgres
+    password: secret

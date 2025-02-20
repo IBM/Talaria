@@ -1,11 +1,13 @@
 package api
 
 import (
-	"opentalaria/protocol"
+	"github.com/ibm/opentalaria/config"
+	"github.com/ibm/opentalaria/protocol"
 )
 
 type APIVersionsAPI struct {
 	Request Request
+	Config  *config.Config
 }
 
 func (a APIVersionsAPI) Name() string {
